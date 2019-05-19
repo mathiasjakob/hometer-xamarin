@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Hometer.ViewModels;assembly=Hometer"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="Hometer.Views.ChartsPage">
+    <ContentPage.BindingContext>
+        <viewModels:ChartsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh" Command="{Binding RefreshCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <microcharts:ChartView Grid.Row="0" Chart="{Binding TemperatureChart}" Margin="0" />
+            <microcharts:ChartView Grid.Row="1" Chart="{Binding TemperatureChart}" />
+            <microcharts:ChartView Grid.Row="2" Chart="{Binding TemperatureChart}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

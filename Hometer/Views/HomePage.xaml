@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Hometer.ViewModels;assembly=Hometer"
+             x:Class="Hometer.Views.HomePage">
+    <ContentPage.BindingContext>
+        <viewModels:HomeViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Label Text="{Binding TemperatureString, StringFormat='{0}°C'}" FontSize="32" HorizontalOptions="Center" />
+            <Label Text="{Binding HumidityString, StringFormat='{0}%'}" FontSize="32" HorizontalOptions="Center" />
+            <Label Text="{Binding PressureString, StringFormat='{0}kPa'}" FontSize="32" VerticalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
